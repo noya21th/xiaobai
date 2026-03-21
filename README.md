@@ -144,7 +144,11 @@ Mascot: a cat. Obviously. `(=^・ω・^=)`
 ### Claude Code
 
 ```bash
-claude install-skill github:noya21th/xiaobai/skills/xiaobai
+# Clone the repo
+git clone https://github.com/noya21th/xiaobai.git
+
+# Copy the skill to Claude Code's skills directory
+cp -r xiaobai/skills/xiaobai ~/.claude/skills/xiaobai
 ```
 
 ### Cursor
