@@ -141,7 +141,19 @@ Mascot: a cat. Obviously. `(=^・ω・^=)`
 
 ## Installation
 
+### Open Your Terminal First
+
+You'll need a "terminal" — a window where you type commands and the computer does what you say. Don't worry, just follow along.
+
+**Mac:** Hold **Command**, then press **Space**. A search box appears — type "Terminal" and hit Enter.
+
+**Windows:** Hold **Win**, then press **R**. A small window appears — type `cmd` and hit Enter.
+
+You'll see a dark (or light) window with a blinking cursor. That's it — you're in.
+
 ### One-Line Install (Recommended)
+
+Copy the line below 👇, paste it into that window, and press Enter:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash
