@@ -219,14 +219,21 @@ curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/insta
 
 ### 指定平台安装
 
+只装 Claude Code：
+
 ```bash
-# 只装 Claude Code
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform claude
+```
 
-# 只装 Cursor
+只装 Cursor：
+
+```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform cursor
+```
 
-# 全部平台都装
+全部平台都装：
+
+```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform all
 ```
 

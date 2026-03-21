@@ -153,14 +153,21 @@ Supports Claude Code, OpenAI Codex CLI, Cursor, Amazon Kiro, Tencent CodeBuddy, 
 
 ### Install for a Specific Platform
 
+Claude Code only:
+
 ```bash
-# Claude Code only
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform claude
+```
 
-# Cursor only
+Cursor only:
+
+```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform cursor
+```
 
-# All platforms
+All platforms:
+
+```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform all
 ```
 
