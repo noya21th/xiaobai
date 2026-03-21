@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # xiaobai 一键安装脚本
-# 让小白爱上编程 (=^・ω・^=)
+# 小白编程：让小白爱上编程！ (=^・ω・^=)
 #
 # 用法：
 #   curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash
@@ -40,13 +40,13 @@ if [ "$LANG_CODE" = "zh" ]; then
     SKILL_DIR="xiaobai"
     echo ""
     echo -e "  ${CYAN}(=^・ω・^=)${NC}  xiaobai 安装工具"
-    echo -e "  ${DIM}让小白爱上编程${NC}"
+    echo -e "  ${DIM}小白编程：让小白爱上编程！${NC}"
     echo ""
 else
     SKILL_DIR="xiaobai-en"
     echo ""
     echo -e "  ${CYAN}(=^・ω・^=)${NC}  xiaobai installer"
-    echo -e "  ${DIM}Make beginners fall in love with coding${NC}"
+    echo -e "  ${DIM}Xiaobai Coding: Make beginners fall in love with coding!${NC}"
     echo ""
 fi
 
