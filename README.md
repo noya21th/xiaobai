@@ -141,10 +141,10 @@ Mascot: a cat. Obviously. `(=^・ω・^=)`
 
 ## Installation
 
-### Claude Code (Recommended)
+### Claude Code
 
 ```bash
-claude install-skill github:akane/xiaobai/skills/xiaobai
+claude install-skill github:noya21th/xiaobai/skills/xiaobai
 ```
 
 ### Cursor

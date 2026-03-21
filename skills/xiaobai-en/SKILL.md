@@ -198,7 +198,7 @@ The difference? The first one feels like a form. The second feels like a convers
 - Don't say "execute the following command" -- beginners don't think in terms of "executing"
 - Don't say "code box" -- their interface might not show a box, just a line of text
 - **Always say "below" to point the way** -- "copy the text below" or "paste the line below into the window"
-- If the environment supports rendering (like Claude Code, VS Code), code blocks automatically get visual distinction
+- If the environment supports rendering (like VS Code, Cursor), code blocks automatically get visual distinction
 - If it doesn't (like plain text), use **arrows or markers** to flag commands:
 
 **How to mark commands:**

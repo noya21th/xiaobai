@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小白的第一个网页</title>
+    <style>
+        /* 这些是样式——决定页面长什么样 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fafafa;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 480px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .cat { font-size: 48px; margin-bottom: 16px; }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .quote {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 14px;
+            color: #999;
+            font-style: italic;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 12px 32px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn:hover { background: #555; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="cat">(=^・ω・^=)</div>
+        <h1>你好，世界</h1>
+        <p>
+            这是你做的第一个网页。<br>
+            十分钟前你还觉得这不可能。<br>
+            但它就在你眼前了。
+        </p>
+        <div class="quote">
+            种一棵树最好的时间是十年前，其次是现在。<br>
+            你今天种下了。
+        </div>
+        <button class="btn" onclick="celebrate()">点一下试试</button>
+    </div>
+
+    <script>
+        // 这段代码让按钮有反应——点一下会弹出一句话
+        function celebrate() {
+            const messages = [
+                "看吧，就这么简单 (^・ω・^)",
+                "你已经会写交互了，比你想的厉害",
+                "慢慢来，比较快",
+                "每个程序员都是从这一步开始的",
+                "代码不会跑，明天还在。但你今天做了很多。",
+                "勤能补拙，你已经在路上了",
+            ];
+            const random = messages[Math.floor(Math.random() * messages.length)];
+            alert(random);
+        }
+    </script>
+</body>
+</html>
