@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时器</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, "PingFang SC", sans-serif;
+            background: #1a1a2e;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .cat { font-size: 40px; margin-bottom: 20px; }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 400;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .timer {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .timer-block {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 24px 20px;
+            min-width: 90px;
+        }
+
+        .timer-number {
+            font-size: 48px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timer-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .input-area {
+            margin-bottom: 32px;
+        }
+
+        .input-area input {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            width: 280px;
+            text-align: center;
+            outline: none;
+        }
+
+        .input-area input:focus {
+            border-color: #667eea;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.08);
+            color: #aaa;
+        }
+
+        .btn:hover { transform: scale(1.05); }
+
+        .quote {
+            margin-top: 48px;
+            font-size: 13px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .done-message {
+            font-size: 24px;
+            color: #667eea;
+            margin: 20px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cat">(=^・ω・^=)</div>
+        <h1 id="title">给重要的日子设一个倒计时</h1>
+
+        <div class="timer" id="timer" style="display:none">
+            <div class="timer-block">
+                <div class="timer-number" id="days">00</div>
+                <div class="timer-label">天</div>
+            </div>
+            <div class="timer-block">
+                <div class="timer-number" id="hours">00</div>
+                <div class="timer-label">时</div>
+            </div>
+            <div class="timer-block">
+                <div class="timer-number" id="minutes">00</div>
+                <div class="timer-label">分</div>
+            </div>
+            <div class="timer-block">
+                <div class="timer-number" id="seconds">00</div>
+                <div class="timer-label">秒</div>
+            </div>
+        </div>
+
+        <div class="done-message" id="doneMsg">到了！ (^・ω・^)</div>
+
+        <div class="input-area">
+            <input type="datetime-local" id="dateInput">
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-primary" onclick="startCountdown()">开始倒计时</button>
+            <button class="btn btn-secondary" onclick="resetCountdown()">重置</button>
+        </div>
+
+        <div class="quote" id="quote"></div>
+    </div>
+
+    <script>
+        let interval = null;
+
+        function startCountdown() {
+            const input = document.getElementById("dateInput");
+            const target = new Date(input.value);
+
+            if (isNaN(target.getTime())) {
+                alert("先选一个日期和时间 (=^・^=)?");
+                return;
+            }
+
+            document.getElementById("timer").style.display = "flex";
+            document.getElementById("doneMsg").style.display = "none";
+
+            const quotes = [
+                "不积跬步，无以至千里。",
+                "路漫漫其修远兮，吾将上下而求索。",
+                "千里之行，始于足下。",
+                "锲而不舍，金石可镂。",
+                "天道酬勤。",
+            ];
+            document.getElementById("quote").textContent =
+                quotes[Math.floor(Math.random() * quotes.length)];
+
+            if (interval) clearInterval(interval);
+
+            interval = setInterval(() => {
+                const now = new Date();
+                const diff = target - now;
+
+                if (diff <= 0) {
+                    clearInterval(interval);
+                    document.getElementById("timer").style.display = "none";
+                    document.getElementById("doneMsg").style.display = "block";
+                    document.getElementById("title").textContent = "时间到了！";
+                    document.getElementById("quote").textContent =
+                        "宝剑锋从磨砺出，梅花香自苦寒来。";
+                    return;
+                }
+
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById("days").textContent = String(d).padStart(2, "0");
+                document.getElementById("hours").textContent = String(h).padStart(2, "0");
+                document.getElementById("minutes").textContent = String(m).padStart(2, "0");
+                document.getElementById("seconds").textContent = String(s).padStart(2, "0");
+            }, 1000);
+        }
+
+        function resetCountdown() {
+            if (interval) clearInterval(interval);
+            document.getElementById("timer").style.display = "none";
+            document.getElementById("doneMsg").style.display = "none";
+            document.getElementById("title").textContent = "给重要的日子设一个倒计时";
+            document.getElementById("quote").textContent = "";
+            document.getElementById("dateInput").value = "";
+        }
+    </script>
+</body>
+</html>

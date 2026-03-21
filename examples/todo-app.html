@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小白的待办清单</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .app {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .input-row input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-row input:focus {
+            border-color: #667eea;
+        }
+
+        .input-row button {
+            padding: 14px 24px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .input-row button:hover {
+            background: #5a6fd6;
+        }
+
+        .todo-list {
+            list-style: none;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid #f5f5f5;
+            transition: background 0.2s;
+        }
+
+        .todo-item:hover {
+            background: #fafafa;
+            border-radius: 12px;
+        }
+
+        .todo-item.done .todo-text {
+            text-decoration: line-through;
+            color: #ccc;
+        }
+
+        .todo-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            margin-right: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .todo-item.done .todo-checkbox {
+            background: #667eea;
+            border-color: #667eea;
+        }
+
+        .todo-item.done .todo-checkbox::after {
+            content: "✓";
+            color: white;
+            font-size: 13px;
+        }
+
+        .todo-text {
+            flex: 1;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .todo-delete {
+            opacity: 0;
+            background: none;
+            border: none;
+            color: #ff6b6b;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 4px 8px;
+            transition: opacity 0.2s;
+        }
+
+        .todo-item:hover .todo-delete {
+            opacity: 1;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 40px 0;
+            color: #ccc;
+        }
+
+        .empty .cat {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .stats {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #f0f0f0;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .quote {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 12px;
+            color: #bbb;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <h1>(=^・ω・^=) 待办清单</h1>
+            <p>千里之行，始于足下</p>
+        </div>
+
+        <div class="input-row">
+            <input type="text" id="todoInput" placeholder="今天要做什么？" onkeypress="if(event.key==='Enter') addTodo()">
+            <button onclick="addTodo()">添加</button>
+        </div>
+
+        <ul class="todo-list" id="todoList"></ul>
+        <div class="stats" id="stats"></div>
+        <div class="quote" id="quote"></div>
+    </div>
+
+    <script>
+        // 这段代码管理你的待办事项——增删改查，都在这了
+
+        // 从浏览器本地存储读取之前保存的待办（关掉页面再打开还在）
+        let todos = JSON.parse(localStorage.getItem("xiaobai-todos") || "[]");
+
+        // 每次数据变了就保存到本地
+        function saveTodos() {
+            localStorage.setItem("xiaobai-todos", JSON.stringify(todos));
+        }
+
+        // 添加一条待办
+        function addTodo() {
+            const input = document.getElementById("todoInput");
+            const text = input.value.trim();
+
+            if (!text) return;  // 啥都没输就不加
+
+            todos.push({ text: text, done: false, id: Date.now() });
+            input.value = "";
+            saveTodos();
+            renderTodos();
+        }
+
+        // 点击完成/取消完成
+        function toggleTodo(id) {
+            const todo = todos.find(t => t.id === id);
+            if (todo) {
+                todo.done = !todo.done;
+                saveTodos();
+                renderTodos();
+            }
+        }
+
+        // 删除一条待办
+        function deleteTodo(id) {
+            todos = todos.filter(t => t.id !== id);
+            saveTodos();
+            renderTodos();
+        }
+
+        // 把所有待办画到页面上
+        function renderTodos() {
+            const list = document.getElementById("todoList");
+            const stats = document.getElementById("stats");
+            const quote = document.getElementById("quote");
+
+            if (todos.length === 0) {
+                list.innerHTML = '<div class="empty"><div class="cat">(=^・^=)?</div>还没有待办，加一个试试？</div>';
+                stats.textContent = "";
+                quote.textContent = "";
+                return;
+            }
+
+            list.innerHTML = todos.map(todo => `
+                <li class="todo-item ${todo.done ? 'done' : ''}">
+                    <div class="todo-checkbox" onclick="toggleTodo(${todo.id})"></div>
+                    <span class="todo-text">${escapeHtml(todo.text)}</span>
+                    <button class="todo-delete" onclick="deleteTodo(${todo.id})">×</button>
+                </li>
+            `).join("");
+
+            const done = todos.filter(t => t.done).length;
+            const total = todos.length;
+            stats.textContent = `${done} / ${total} 已完成`;
+
+            // 全部完成时给一句鼓励
+            const quotes = [
+                "先完成，再完美。你做到了。",
+                "不积跬步，无以至千里。今天又走了几步。",
+                "勤能补拙，坚持就是胜利。",
+                "慢慢来，比较快。",
+                "你看，没有想象中那么难吧。",
+            ];
+
+            if (done === total && total > 0) {
+                quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+            } else if (done > 0) {
+                quote.textContent = `还剩 ${total - done} 个，稳住 ᕦ(=^・ω・^=)ᕤ`;
+            } else {
+                quote.textContent = "";
+            }
+        }
+
+        // 防止用户输入的内容破坏页面结构（安全处理）
+        function escapeHtml(text) {
+            const div = document.createElement("div");
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 页面加载时先画一遍
+        renderTodos();
+    </script>
+</body>
+</html>
