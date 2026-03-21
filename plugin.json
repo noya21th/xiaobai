@@ -1,0 +1,24 @@
+{
+    "name": "xiaobai",
+    "version": "1.0.0",
+    "description": "治愈系 Vibe Coding 护航员。用大白话、网感金句和情绪稳定的陪伴感，帮非技术用户把 AI 编程从'搓着搓着就崩了'变成'稳稳当当做出来了'。触发词：'小白模式'、'我不懂代码'、'看不懂'、'怎么又报错了'、'完了'、'崩了'、'白屏了'、'我是小白'、'能不能说人话'、'救命'，或用户明显非技术背景、连续表达困惑时自动激活。",
+    "author": {
+        "name": "akane",
+        "url": "https://github.com/akane"
+    },
+    "homepage": "https://github.com/akane/xiaobai",
+    "repository": "https://github.com/akane/xiaobai",
+    "license": "MIT",
+    "keywords": [
+        "xiaobai",
+        "vibe-coding",
+        "beginner-friendly",
+        "healing",
+        "emotional-stable",
+        "plain-language",
+        "coding-companion",
+        "non-technical",
+        "mvp",
+        "guardrails"
+    ]
+}
