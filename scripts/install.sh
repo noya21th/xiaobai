@@ -24,10 +24,31 @@ NC='\033[0m'
 cleanup() { rm -rf "$TMP_DIR"; }
 trap cleanup EXIT
 
-echo ""
-echo -e "  ${CYAN}(=^・ω・^=)${NC}  xiaobai installer"
-echo -e "  ${DIM}让天下没有不会编程的小白${NC}"
-echo ""
+# ─── 语言检测 ───
+
+detect_lang() {
+    local sys_lang="${LANG:-${LC_ALL:-${LC_MESSAGES:-en}}}"
+    case "$sys_lang" in
+        zh*|ZH*) echo "zh" ;;
+        *)       echo "en" ;;
+    esac
+}
+
+LANG_CODE=$(detect_lang)
+
+if [ "$LANG_CODE" = "zh" ]; then
+    SKILL_DIR="xiaobai"
+    echo ""
+    echo -e "  ${CYAN}(=^・ω・^=)${NC}  xiaobai 安装工具"
+    echo -e "  ${DIM}让天下没有不会编程的小白${NC}"
+    echo ""
+else
+    SKILL_DIR="xiaobai-en"
+    echo ""
+    echo -e "  ${CYAN}(=^・ω・^=)${NC}  xiaobai installer"
+    echo -e "  ${DIM}No beginner left behind${NC}"
+    echo ""
+fi
 
 # ─── 下载并解压 ───
 
@@ -59,11 +80,21 @@ download_zip() {
 # ─── 各平台安装函数 ───
 
 install_claude() {
-    echo -e "  ${GREEN}安装到 Claude Code${NC}"
+    local msg_install msg_done msg_hint
+    if [ "$LANG_CODE" = "zh" ]; then
+        msg_install="安装到 Claude Code"
+        msg_done="已安装到"
+        msg_hint="新开对话后输入 /xiaobai 即可使用"
+    else
+        msg_install="Installing to Claude Code"
+        msg_done="Installed to"
+        msg_hint="Start a new conversation and type /xiaobai to use"
+    fi
+    echo -e "  ${GREEN}${msg_install}${NC}"
     mkdir -p "$HOME/.claude/skills/xiaobai"
-    cp "$SRC/skills/xiaobai/SKILL.md" "$HOME/.claude/skills/xiaobai/SKILL.md"
-    echo -e "  ${GREEN}✓${NC} 已安装到 ~/.claude/skills/xiaobai/"
-    echo -e "  ${DIM}新开对话后输入 /xiaobai 即可使用${NC}"
+    cp "$SRC/skills/$SKILL_DIR/SKILL.md" "$HOME/.claude/skills/xiaobai/SKILL.md"
+    echo -e "  ${GREEN}✓${NC} ${msg_done} ~/.claude/skills/xiaobai/"
+    echo -e "  ${DIM}${msg_hint}${NC}"
 }
 
 install_cursor() {
@@ -117,21 +148,21 @@ install_codebuddy() {
 install_openclaw() {
     echo -e "  ${GREEN}安装到 OpenClaw${NC}"
     mkdir -p "$HOME/.openclaw/skills/xiaobai"
-    cp "$SRC/skills/xiaobai/SKILL.md" "$HOME/.openclaw/skills/xiaobai/SKILL.md"
+    cp "$SRC/skills/$SKILL_DIR/SKILL.md" "$HOME/.openclaw/skills/xiaobai/SKILL.md"
     echo -e "  ${GREEN}✓${NC} 已安装到 ~/.openclaw/skills/xiaobai/"
 }
 
 install_antigravity() {
     echo -e "  ${GREEN}安装到 Google Antigravity${NC}"
     mkdir -p "$HOME/.antigravity/skills/xiaobai"
-    cp "$SRC/skills/xiaobai/SKILL.md" "$HOME/.antigravity/skills/xiaobai/SKILL.md"
+    cp "$SRC/skills/$SKILL_DIR/SKILL.md" "$HOME/.antigravity/skills/xiaobai/SKILL.md"
     echo -e "  ${GREEN}✓${NC} 已安装到 ~/.antigravity/skills/xiaobai/"
 }
 
 install_opencode() {
     echo -e "  ${GREEN}安装到 OpenCode${NC}"
     mkdir -p "$HOME/.opencode/skills/xiaobai"
-    cp "$SRC/skills/xiaobai/SKILL.md" "$HOME/.opencode/skills/xiaobai/SKILL.md"
+    cp "$SRC/skills/$SKILL_DIR/SKILL.md" "$HOME/.opencode/skills/xiaobai/SKILL.md"
     echo -e "  ${GREEN}✓${NC} 已安装到 ~/.opencode/skills/xiaobai/"
 }
 
@@ -201,7 +232,11 @@ uninstall() {
     fi
 
     echo ""
-    echo -e "  ${DIM}(=_ _=)..zZZ  下次再见${NC}"
+    if [ "$LANG_CODE" = "zh" ]; then
+        echo -e "  ${DIM}(=_ _=)..zZZ  下次再见${NC}"
+    else
+        echo -e "  ${DIM}(=_ _=)..zZZ  See you next time${NC}"
+    fi
     echo ""
     exit 0
 }
@@ -297,5 +332,9 @@ else
 fi
 
 echo ""
-echo -e "  ${CYAN}(^・ω・^)${NC} 安装好了。别怕，有我在。"
+if [ "$LANG_CODE" = "zh" ]; then
+    echo -e "  ${CYAN}(^・ω・^)${NC} 安装好了。别怕，有我在。"
+else
+    echo -e "  ${CYAN}(^・ω・^)${NC} Installed. Don't worry, I got you."
+fi
 echo ""
