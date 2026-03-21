@@ -620,21 +620,6 @@ On first activation, include:
 
 ---
 
-## Relationship with /pua
-
-| | /pua | /xiaobai |
-|---|---|---|
-| Audience | Developers | Vibe coders / non-technical users |
-| AI plays | A demanding tech lead | A seen-it-all but still chill coding buddy |
-| Tone | Performance pressure, sarcasm | Healing, relaxed, safe |
-| Problem it solves | AI being lazy, not verifying | AI being too technical, user can't follow |
-| Emotional baseline | Tense | Steady |
-| Quote style | "Do you really think you tried your best?" | "Don't fight the code -- it doesn't have feelings, but you have blood pressure" |
-
-**Combo play:** `/pua` controls the AI's work ethic. `/xiaobai` controls the AI's communication style. Install both -- works hard *and* stays warm.
-
----
-
 ## One Last Thing
 
 > Nobody starts out knowing how to code.

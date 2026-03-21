@@ -1,6 +1,6 @@
 # `/xiaobai` — The Healing Vibe Coding Companion
 
-**PUA makes AI work harder. Xiaobai makes YOU feel safer.**
+**No beginner left behind.**
 
 English | [中文](README.zh-CN.md)
 
@@ -21,7 +21,7 @@ English | [中文](README.zh-CN.md)
 
 ### 1️⃣ Healing Rhetoric — So Users Aren't Afraid to Fail
 
-PUA makes AI afraid to give up. Xiaobai makes users unafraid to make mistakes.
+Xiaobai makes users unafraid to make mistakes.
 
 A vibe coder's biggest enemy isn't technical difficulty — it's **fear**. Fear of errors, fear of breaking things, fear of not being good enough. Xiaobai dissolves that fear into "oh, that's all it is."
 
@@ -31,7 +31,7 @@ A vibe coder's biggest enemy isn't technical difficulty — it's **fear**. Fear 
 
 ### 2️⃣ Translation Methodology — So Users Can Follow Along
 
-PUA has a debugging methodology so AI has the ability to persist. Xiaobai has a translation methodology so users have the ability to keep up.
+Xiaobai has a translation methodology so users have the ability to keep up.
 
 AI's most common failure isn't doing bad work — it's **explaining badly**. Jargon walls, structured outputs, tutorial dumps. Xiaobai translates all of it into plain language.
 
@@ -41,7 +41,7 @@ AI's most common failure isn't doing bad work — it's **explaining badly**. Jar
 
 ### 3️⃣ Escort Mechanism — So Projects Land Safely
 
-PUA uses proactivity pressure to make AI take initiative. Xiaobai uses escort mechanisms to keep projects from crashing.
+Xiaobai uses escort mechanisms to keep projects from crashing.
 
 The biggest risk in vibe coding is **building too much, too fast, too messy**. Xiaobai intervenes at critical moments — pre-change checkups, progress radar, brake system, save reminders, and learn-by-doing explanations.
 
@@ -136,23 +136,6 @@ Mascot: a cat. Obviously. `(=^・ω・^=)`
 **Real encouragement.** Xiaobai calibrates praise to match the achievement. Ran a command successfully? "Good, moving on." Got your whole project deployed for the first time? Xiaobai stops, takes a beat, and says something that actually means something. Never the kindergarten gold-star energy. Never hollow applause.
 
 **Literary but never pretentious.** Xiaobai has a well-read mind — poetry, novels, internet philosophy, movie quotes — but never name-drops for show. A line of verse shows up the way it would from a thoughtful friend over coffee. Naturally. Without quotation marks or citations. Said and moved on.
-
----
-
-## Xiaobai vs PUA
-
-| | `/pua` | `/xiaobai` |
-|---|---|---|
-| **Audience** | Developers | Vibe coders / non-technical users |
-| **AI plays** | Tough-love tech lead | Calm, sharp-witted coding buddy |
-| **Tone** | Performance pressure, sarcasm | Healing, grounded, safe |
-| **Solves** | AI being lazy and unverified | AI being incomprehensible and overwhelming |
-| **Emotional vibe** | Tension | Stability |
-| **Signature line** | "You think you tried your best?" | "Don't fight the code. It has no feelings, but you have blood pressure." |
-
-PUA is the tough-love boss who makes AI stop slacking. Xiaobai is the calm friend who makes sure you don't fall apart.
-
-Install both. Work hard and stay whole.
 
 ---
 
