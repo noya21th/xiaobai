@@ -166,6 +166,14 @@ curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/insta
 
 Platform options: `claude`, `codex`, `cursor`, `kiro`, `vscode`, `codebuddy`, `openclaw`, `antigravity`, `opencode`, `all`
 
+### Uninstall
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --uninstall
+```
+
+Removes xiaobai from all platforms in one command.
+
 ### Manual Install
 
 1. Download the [ZIP archive](https://github.com/noya21th/xiaobai/archive/refs/heads/main.zip)

@@ -66,13 +66,6 @@ install_claude() {
     echo -e "  ${DIM}新开对话后输入 /xiaobai 即可使用${NC}"
 }
 
-install_claude_en() {
-    echo -e "  ${GREEN}安装到 Claude Code (English)${NC}"
-    mkdir -p "$HOME/.claude/skills/xiaobai-en"
-    cp "$SRC/skills/xiaobai-en/SKILL.md" "$HOME/.claude/skills/xiaobai-en/SKILL.md"
-    echo -e "  ${GREEN}✓${NC} 已安装到 ~/.claude/skills/xiaobai-en/"
-}
-
 install_cursor() {
     echo -e "  ${GREEN}安装到 Cursor${NC}"
     mkdir -p .cursor/rules 2>/dev/null || mkdir -p "$HOME/.cursor/rules"
@@ -146,7 +139,6 @@ install_all() {
     echo -e "  ${CYAN}安装到所有平台${NC}"
     echo ""
     install_claude
-    install_claude_en
     install_cursor
     install_vscode
     install_codex
@@ -170,16 +162,67 @@ detect_platform() {
     echo "$found"
 }
 
+# ─── 卸载 ───
+
+uninstall() {
+    echo -e "  ${YELLOW}正在卸载 xiaobai...${NC}"
+    echo ""
+
+    local removed=0
+
+    for path in \
+        "$HOME/.claude/skills/xiaobai" \
+        "$HOME/.claude/skills/xiaobai-en" \
+        ".cursor/rules/xiaobai.mdc" \
+        "$HOME/.cursor/rules/xiaobai.mdc" \
+        ".github/copilot-instructions.md" \
+        ".codex/xiaobai" \
+        "$HOME/.codex/xiaobai" \
+        ".kiro/steering/xiaobai.md" \
+        "$HOME/.kiro/steering/xiaobai.md" \
+        ".codebuddy/xiaobai.md" \
+        "$HOME/.codebuddy/xiaobai.md" \
+        "$HOME/.openclaw/skills/xiaobai" \
+        "$HOME/.antigravity/skills/xiaobai" \
+        "$HOME/.opencode/skills/xiaobai"
+    do
+        if [ -e "$path" ]; then
+            rm -rf "$path"
+            echo -e "  ${GREEN}✓${NC} 已删除 $path"
+            removed=$((removed + 1))
+        fi
+    done
+
+    if [ $removed -eq 0 ]; then
+        echo "  没找到已安装的 xiaobai"
+    else
+        echo ""
+        echo -e "  已卸载 $removed 个平台的 xiaobai"
+    fi
+
+    echo ""
+    echo -e "  ${DIM}(=_ _=)..zZZ  下次再见${NC}"
+    echo ""
+    exit 0
+}
+
 # ─── 主流程 ───
 
 # 解析参数
 PLATFORM_ARG=""
+UNINSTALL=false
 while [[ $# -gt 0 ]]; do
     case $1 in
         --platform|-p) PLATFORM_ARG="$2"; shift 2 ;;
+        --uninstall|--remove|uninstall|remove) UNINSTALL=true; shift ;;
         *) shift ;;
     esac
 done
+
+# 卸载模式
+if [ "$UNINSTALL" = true ]; then
+    uninstall
+fi
 
 # 下载
 download_zip
@@ -188,7 +231,6 @@ download_zip
 if [ -n "$PLATFORM_ARG" ]; then
     case $PLATFORM_ARG in
         claude)       install_claude ;;
-        claude-en)    install_claude_en ;;
         cursor)       install_cursor ;;
         vscode)       install_vscode ;;
         codex)        install_codex ;;

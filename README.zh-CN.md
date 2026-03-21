@@ -232,6 +232,14 @@ curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/insta
 
 支持的平台参数：`claude`、`codex`、`cursor`、`kiro`、`vscode`、`codebuddy`、`openclaw`、`antigravity`、`opencode`、`all`
 
+### 卸载
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --uninstall
+```
+
+一键删除所有平台上安装的 xiaobai。
+
 ### 手动安装
 
 如果你不想用一键脚本，也可以手动下载：
