@@ -141,43 +141,44 @@ Mascot: a cat. Obviously. `(=^・ω・^=)`
 
 ## Installation
 
-### Claude Code
+### One-Line Install (Recommended)
 
 ```bash
-# Clone the repo
-git clone https://github.com/noya21th/xiaobai.git
-
-# Copy the skill to Claude Code's skills directory
-cp -r xiaobai/skills/xiaobai ~/.claude/skills/xiaobai
+curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash
 ```
 
-### Cursor
+The script auto-detects which dev tools you have installed and sets everything up.
 
-Copy `cursor/rules/xiaobai.mdc` to your project's `.cursor/rules/` directory.
+Supports Claude Code, OpenAI Codex CLI, Cursor, Amazon Kiro, Tencent CodeBuddy, OpenClaw, Google Antigravity, OpenCode, and VS Code (GitHub Copilot).
 
-### VS Code (GitHub Copilot)
+### Install for a Specific Platform
 
-Copy `vscode/copilot-instructions.md` to your project's `.github/` directory and enable in VS Code settings:
+```bash
+# Claude Code only
+curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform claude
 
+# Cursor only
+curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform cursor
+
+# All platforms
+curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform all
 ```
-github.copilot.chat.codeGeneration.useInstructionFiles: true
-```
 
-### OpenAI Codex CLI
+Platform options: `claude`, `codex`, `cursor`, `kiro`, `vscode`, `codebuddy`, `openclaw`, `antigravity`, `opencode`, `all`
 
-Copy `codex/xiaobai/SKILL.md` to your project's `.codex/` directory.
+### Manual Install
 
-### Amazon Kiro
+1. Download the [ZIP archive](https://github.com/noya21th/xiaobai/archive/refs/heads/main.zip)
+2. Extract and copy the relevant file to the right location:
 
-Copy `kiro/steering/xiaobai.md` to your project's `.kiro/steering/` directory.
-
-### Tencent CodeBuddy
-
-Copy `codebuddy/xiaobai.md` to your project's `.codebuddy/` directory.
-
-### OpenClaw / Google Antigravity / OpenCode
-
-Copy the contents of `skills/xiaobai/SKILL.md` into the platform's custom instruction configuration.
+| Platform | Copy this file | To here |
+|----------|---------------|---------|
+| Claude Code | `skills/xiaobai/SKILL.md` | `~/.claude/skills/xiaobai/` |
+| Cursor | `cursor/rules/xiaobai.mdc` | `.cursor/rules/` |
+| VS Code | `vscode/copilot-instructions.md` | `.github/` |
+| Codex CLI | `codex/xiaobai/SKILL.md` | `.codex/xiaobai/` |
+| Kiro | `kiro/steering/xiaobai.md` | `.kiro/steering/` |
+| CodeBuddy | `codebuddy/xiaobai.md` | `.codebuddy/` |
 
 ---
 
