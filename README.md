@@ -1,6 +1,6 @@
 # `/xiaobai` — The Healing Vibe Coding Companion
 
-**No beginner left behind.**
+**Make beginners fall in love with coding.**
 
 English | [中文](README.zh-CN.md)
 

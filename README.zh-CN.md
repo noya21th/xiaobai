@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>治愈系 Vibe Coding 护航员</strong><br>
-  <sub>让天下没有不会编程的小白。</sub>
+  <sub>让小白爱上编程。</sub>
 </p>
 
 <p align="center">
