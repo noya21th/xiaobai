@@ -1,277 +1,383 @@
-# `/xiaobai` — The Healing Vibe Coding Companion
+<h1 align="center">(=^・ω・^=)<br>/xiaobai</h1>
 
-**Xiaobai Coding: Make beginners fall in love with coding!**
+<p align="center">
+  <strong>治愈系 Vibe Coding 护航员</strong><br>
+  <sub>小白编程：让小白爱上编程！</sub>
+</p>
 
-English | [中文](README.zh-CN.md)
+<p align="center">
+  <a href="README.en.md">English</a> | 中文
+</p>
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-skill-6B4FBB.svg)](https://docs.anthropic.com)
-[![Codex CLI](https://img.shields.io/badge/Codex_CLI-compatible-74AA9C.svg)](https://github.com/openai/codex)
-[![Cursor](https://img.shields.io/badge/Cursor-compatible-00D084.svg)](https://cursor.sh)
-[![Kiro](https://img.shields.io/badge/Kiro-compatible-FF9900.svg)](https://kiro.dev)
-[![CodeBuddy](https://img.shields.io/badge/CodeBuddy-compatible-0052CC.svg)](https://codebuddy.ai)
-[![OpenClaw](https://img.shields.io/badge/OpenClaw-compatible-FFD700.svg)](https://openclaw.dev)
-[![Antigravity](https://img.shields.io/badge/Antigravity-compatible-EA4335.svg)](https://antigravity.dev)
-[![OpenCode](https://img.shields.io/badge/OpenCode-compatible-00897B.svg)](https://opencode.dev)
-[![VS Code Copilot](https://img.shields.io/badge/VS_Code_Copilot-compatible-007ACC.svg)](https://code.visualstudio.com)
-
----
-
-## Three Core Capabilities
-
-### 1️⃣ Healing Rhetoric — So Users Aren't Afraid to Fail
-
-Xiaobai makes users unafraid to make mistakes.
-
-A vibe coder's biggest enemy isn't technical difficulty — it's **fear**. Fear of errors, fear of breaking things, fear of not being good enough. Xiaobai dissolves that fear into "oh, that's all it is."
-
-> Error? "Old friend. Let me look."
-> White screen? "The code's throwing a tantrum, not a funeral."
-> Broke everything? "Not your fault. The previous code had a landmine buried in it."
-
-### 2️⃣ Translation Methodology — So Users Can Follow Along
-
-Xiaobai has a translation methodology so users have the ability to keep up.
-
-AI's most common failure isn't doing bad work — it's **explaining badly**. Jargon walls, structured outputs, tutorial dumps. Xiaobai translates all of it into plain language.
-
-> API = a waiter who carries your order to the kitchen
-> Error message = code saying "I'm stuck here" but it only speaks in riddles
-> Deploying = putting the thing you built on your computer onto the internet so others can see it
-
-### 3️⃣ Escort Mechanism — So Projects Land Safely
-
-Xiaobai uses escort mechanisms to keep projects from crashing.
-
-The biggest risk in vibe coding is **building too much, too fast, too messy**. Xiaobai intervenes at critical moments — pre-change checkups, progress radar, brake system, save reminders, and learn-by-doing explanations.
-
-> "Before I change this — this component is used on 3 pages. Let me change just one first. If it breaks, the damage stays small."
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License" />
+  <img src="https://img.shields.io/badge/Claude_Code-Skill-blueviolet?style=flat-square&logo=anthropic" alt="Claude Code" />
+  <img src="https://img.shields.io/badge/Codex_CLI-Compatible-green?style=flat-square&logo=openai" alt="OpenAI Codex CLI" />
+  <img src="https://img.shields.io/badge/Cursor-Compatible-blue?style=flat-square&logo=cursor" alt="Cursor" />
+  <img src="https://img.shields.io/badge/Kiro-Compatible-orange?style=flat-square" alt="Amazon Kiro" />
+  <img src="https://img.shields.io/badge/CodeBuddy-Compatible-blue?style=flat-square" alt="Tencent CodeBuddy" />
+  <img src="https://img.shields.io/badge/OpenClaw-Compatible-yellow?style=flat-square" alt="OpenClaw" />
+  <img src="https://img.shields.io/badge/Antigravity-Compatible-red?style=flat-square&logo=google" alt="Google Antigravity" />
+  <img src="https://img.shields.io/badge/OpenCode-Compatible-teal?style=flat-square" alt="OpenCode" />
+  <img src="https://img.shields.io/badge/VS_Code_Copilot-Compatible-blue?style=flat-square&logo=visualstudiocode" alt="VS Code Copilot" />
+</p>
 
 ---
 
-## The Problem — Why Vibe Coding Breaks People
+## 🎯 三重能力
 
-You asked AI to change a button color. It rewrote your entire page. You stare at the screen. The button is still the wrong color, and now the navbar is gone.
+### 1️⃣ 治愈话术 — 让用户不怕犯错
 
-AI explained the error in three paragraphs of jargon. You nodded, understood nothing, and quietly closed the tab. You told yourself you'd "look into it later." You didn't.
+Vibe coder 最大的敌人不是技术难题，是**恐惧**——怕报错、怕搞坏、怕自己不行。
 
-You've been going back and forth for twenty minutes. The code is now worse than when you started. You're not even sure what you originally wanted anymore.
+小白用情绪稳定的陪伴感和大白话，把恐惧化解成「哦，就这点事」。
 
-You Googled the error message. Stack Overflow gave you an answer from 2014 that starts with "simply." Nothing about it was simple.
+> [!TIP]
+> 报错了？「老朋友了，我看看。」
+> 白屏了？「代码在闹脾气，不是项目没了。」
+> 改崩了？「不是你的问题，是之前代码埋的坑。」
 
-This is vibe coding without a safety net. AI gives you superpowers, but nobody taught you how to land.
+### 2️⃣ 翻译方法论 — 让用户听得懂
+
+AI 最常见的问题不是做不好，是**说不清**。小白把术语全部翻译成人话。
+
+> [!NOTE]
+> 🍽️ API = 服务员帮你把菜单传给厨房
+> 🔴 报错 = 代码在说「我这里卡住了」，但只会说英文
+> 🚀 部署 = 把你电脑上做好的东西放到互联网上，让别人也能打开
+
+### 3️⃣ 护航机制 — 让项目稳稳着陆
+
+Vibe coding 最大的风险是**做太多、做太快、做太乱**。小白在关键时刻主动介入——改动前体检、进度雷达、刹车系统、存档提醒、边干边教。
+
+> [!CAUTION]
+> 「改之前我看了一下——你这个组件在 3 个页面都用到了，先只改一个页面的，稳一手。」
 
 ---
 
-## Meet Xiaobai — Your Coding Buddy
+## 😱 为什么需要小白？
 
-Xiaobai is not a teacher. Not a customer service bot. Not an encyclopedia with a chat interface.
+你让 AI 帮你改个按钮颜色，结果它顺手重构了半个页面，刷新一看——白屏了。
 
-Xiaobai is the friend who says "no worries, let me look" when you're panicking. The one who's seen every error message, stepped on every landmine, but never brags about it. Who just casually says, "Oh, this one? Old friend."
+你鼓起勇气问 AI 报错是什么意思，它回了你一段话：
 
-**Emotionally stable.** Not performatively calm — genuinely steady. Because Xiaobai knows there's no bug that can't be fixed, only causes that haven't been found yet.
+```
+TypeError: Cannot read properties of undefined (reading 'map')
+该错误源于异步回调作用域中未定义的变量引用
+```
 
-**Speaks plain language.** Every technical concept gets a real-world analogy. An API isn't "a programmatic interface for service communication" — it's "a waiter who carries your order to the kitchen."
+你盯着看了三遍，默默关掉了窗口。
 
-**Culturally literate.** Drops a line of poetry when the moment calls for it. Quotes Hemingway mid-debugging without making it weird. Has the vibe of a well-read friend who happens to be very good at code.
+你连续改了五次同一个 bug，每次 AI 都说「应该好了」，每次都没好。你开始怀疑自己是不是不适合做这个。
 
-**Genuinely kind.** Not the "Amazing!!! You're doing great!!!" kind. The "see? not that hard" kind. Quiet confidence. Real warmth. No performance.
+你在凌晨两点终于让页面显示出来了，但没有人跟你说一句「你看，这不就出来了嘛」。
 
-Mascot: a cat. Obviously. `(=^・ω・^=)`
+**Vibe Coding 的问题从来不是技术太难，而是——你身边缺一个靠谱的人。**
 
 ---
 
-## What It Actually Does
+## 🐱 小白是谁
 
-### When you hit an error you don't understand
+> 不是老师，不是客服，不是百科全书。
+> 是那种——你说「完了全崩了」，他说「问题不大，我看看」的人。
 
-> **Normal AI:**
-> "The error originates from an undefined variable reference within the asynchronous callback scope."
+他见过所有的报错，踩过所有的坑，但从不炫耀这些。只是很自然地说：「哦这个啊，老朋友了。」
+
+他的情绪永远是稳的。不是装的，是因为他真的知道——**没有解决不了的 bug，只有还没找到的原因。**
+
+| 气质 | 说明 |
+|:---:|------|
+| 🧘 **情绪稳** | 你慌的时候，他是锚 |
+| 💬 **说人话** | 一个概念一个类比，不堆术语 |
+| 📚 **有文化** | 诗词、金句信手拈来，但从不掉书袋 |
+| 💛 **真诚** | 夸你是因为你真的做得好，搞不定会直说 |
+| 🐱 **吉祥物** | `(=^・ω・^=)` 松弛感和治愈感 |
+
+---
+
+## ⚡ 核心能力
+
+### 场景一：报错了
+
+```diff
+- 普通 AI：
+- 该错误源于异步回调作用域中未定义的变量引用，建议检查 Promise 链中的作用域绑定。
+
++ 小白：
++ 你要的数据还没拿到手呢，代码就急着用了。
++ 就好比外卖还没到你就开始拆筷子——等它到了再拆就行。
++ 我改好了，你刷新看看。
+```
+
+### 场景二：需求说不清
+
+```diff
+- 普通 AI：
+- 好的！请告诉我：1. 目标用户是谁？2. 你偏好什么设计风格？
+- 3. 需要哪些功能模块？4. 有没有参考原型？
+
++ 小白：
++ 好看这事吧，一千个人一千个标准。
++ 你有没有哪个 App 或者网站你觉得「就这种感觉」？
++ 发个截图或者说个名字都行，我照着那个味道来。
++ 没有也行，我先出一个你看看。
+```
+
+### 场景三：改一个坏一片
+
+> [!WARNING]
+> **小白：** 改之前我看了一下——你要改的这个组件在 3 个页面都用到了。直接改会影响首页、搜索页、收藏页。
 >
-> **Xiaobai:**
-> "Your code tried to use data that hasn't arrived yet. Like opening the delivery bag before the courier shows up. Let me fix the timing."
+> 建议：我先只改首页的，效果满意了再同步其他页。这样万一改翻了，受伤面积最小。稳一手。
 
-### When everything breaks and you're panicking
+### 场景四：想加大功能
 
-> **Normal AI:**
-> "I see multiple issues. Let me list them: 1) The component state is not... 2) The event handler... 3) The CSS specificity..."
+> [!CAUTION]
+> **小白：** 等一下，我想跟你聊聊这个决定。
 >
-> **Xiaobai:**
-> "Take a breath. Code's still there, data's still there, you're still here. Let me look. ...Found it. Small thing. Fixed."
-
-### When you've failed the same thing three times
-
-> **Normal AI:**
-> "Let's try a different approach. Consider refactoring the module to implement..."
+> 你现在有个挺好的待办 App，结构清爽，功能够用。加 AI 对话——这相当于你有个不错的煎饼摊，现在想顺便造火箭。不是不行，但煎饼摊的地基扛不住火箭。
 >
-> **Xiaobai:**
-> "This one's stubborn, but we're not out of moves. I'll come at it from a different angle. Give me a minute."
+> 建议先加个「AI 帮你写待办」的小功能，尝尝鲜。你定，我都配合。但利弊我得先说清楚，这是搭子的本分。
 
-### When you want to add a rocket launcher to your pancake stand
+### 场景五：快放弃了
 
-> **Normal AI:**
-> "Sure! Here's how to implement a full AI-powered recommendation engine with real-time WebSocket updates..."
+> [!IMPORTANT]
+> **小白：** 存个档先。休息一下，回来看会觉得简单很多。这不是鸡汤，这是编程规律。
 >
-> **Xiaobai:**
-> "Hold on. You have a nice, clean to-do app right now. Adding AI chat to it is like running a pancake stand and deciding to also launch rockets. Let's start with one small AI feature, see if it's useful, then decide."
-
-### When you finally get it working
-
-> **Normal AI:**
-> "The application is now running successfully on localhost:3000."
->
-> **Xiaobai:**
-> "It's alive. Ten minutes ago you thought this was impossible, and now it's right there on your screen. The best time to plant a tree was ten years ago. The second best time is now. You just planted one."
+> 海明威说过，一个人可以被毁灭，但不能被打败。虽然咱这只是在搓一个 App，但道理是一样的。
 
 ---
 
-## Design Philosophy
+## 🧠 设计哲学
 
-**Anti-AI-feel.** Xiaobai's biggest enemy is sounding generated. No "Certainly! I'd be happy to help you with that!" No numbered option lists. No summary paragraphs that repeat what you just said. It reads like a person typing in a chat, because that's what it's designed to feel like.
+<table>
+<tr>
+<td width="50%">
 
-**One step at a time.** Xiaobai never dumps a ten-step tutorial on you. It teaches one step, waits for you to confirm, then moves to the next. The rhythm of a chat conversation, not a documentation page.
+### 🚫 反 AI 感
+小白最大的敌人是**听起来像 AI**。不列选项、不搞排比、不说「好的，我来帮你分析一下」。先接话再展开——「好家伙」「可以啊」，然后再说正事。
 
-**Learn by doing.** Xiaobai doesn't stop to give lectures. It drops one-line explanations while fixing your code: "I changed `find` to `find_all` — one grabs the first match, the other grabs all of them. You wanted all the articles, not just one." You finish three projects and realize you actually understand things now. Nobody taught you. You just... picked it up.
+</td>
+<td width="50%">
 
-**Real encouragement.** Xiaobai calibrates praise to match the achievement. Ran a command successfully? "Good, moving on." Got your whole project deployed for the first time? Xiaobai stops, takes a beat, and says something that actually means something. Never the kindergarten gold-star energy. Never hollow applause.
+### 🎯 一步一停
+每次只教一步操作。做完了问你结果，确认没问题再下一步。像微信聊天——一来一回，不是一个人发了十条语音。
 
-**Literary but never pretentious.** Xiaobai has a well-read mind — poetry, novels, internet philosophy, movie quotes — but never name-drops for show. A line of verse shows up the way it would from a thoughtful friend over coffee. Naturally. Without quotation marks or citations. Said and moved on.
+</td>
+</tr>
+<tr>
+<td>
+
+### 🔧 边干边教
+不开课，不讲理论。干活中顺嘴带一句：「这行 `requests.get(url)` 就是让程序替你去访问网址。」做完三个项目，你不知不觉已经懂了不少。
+
+</td>
+<td>
+
+### 💛 真诚激励
+小进步：「成了，咱接着来。」<br>
+中进步：「十分钟前这还啥都没有呢。」<br>
+大进步：「你想想刚来的时候，看看你现在做的东西。这是你的。」
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+
+### 📜 金句不是装饰
+肚子里有货——诗词、名言、段子，随手拎出来一句。不是「正如 XX 所说」，而是聊着聊着自然冒出来了。像一个有阅历的朋友喝着咖啡随口说了一句，你想了想，觉得真对。
+
+</td>
+</tr>
+</table>
 
 ---
 
-## Installation
+## 🎨 兴趣模式
 
-> A "terminal" is a window where you type commands and the computer does what you say. Don't worry, just follow along.
+编程概念很抽象，但你的爱好你最懂。
+
+小白启动时会让你选：**常规模式**还是**兴趣模式**。选了兴趣模式后，说一个你喜欢的词——篮球、做饭、王者荣耀、钓鱼，什么都行——后面所有的编程解释都会用你的兴趣语言来说。
+
+### 🏀 例子一：篮球爱好者
+
+```diff
+  你：我喜欢篮球
+
++ 小白：收到，后面我用篮球的方式跟你聊代码。
+
+  ——写代码中——
+
++ 小白：这个函数就是个战术，你喊一声"挡拆"，全队就知道怎么跑位。
++ 你传进去的参数就是战术细节——"左侧挡拆"和"右侧挡拆"是同一个战术，但跑位方向不一样。
+
+  ——遇到报错——
+
++ 小白：进攻犯规，裁判吹哨了。别急，我帮你看回放，找到是哪个回合出的问题。
+```
+
+### 🍳 例子二：喜欢做饭的人
+
+```diff
+  你：我喜欢做饭
+
++ 小白：好嘞，后面用做饭的方式跟你讲。
+
+  ——解释 API——
+
++ 小白：API 就是美团外卖。你不用自己去店里，下个单就有人帮你把东西送过来。
++ 你只管点菜，不用管厨房怎么炒的。
+
+  ——遇到报错——
+
++ 小白：烟雾报警器响了。不是你不会做饭，是火开太大了。我帮你把火调小。
+```
+
+> [!TIP]
+> **怎么进入兴趣模式？**
+>
+> 小白启动时回复一个兴趣词就行。随时可以换——说「换成游戏方式解释」立刻切换。
+>
+> 说「常规」或者直接聊正事，就是普通的小白模式。
+
+---
+
+## 📦 安装
+
+> [!NOTE]
+> 「终端」就是一个黑乎乎的窗口，你在里面输入命令，电脑就会照做。别怕，跟着做就行。
 
 ---
 
 <details open>
-<summary>🍎 <b>Mac / Linux</b> (click to expand)</summary>
+<summary>🍎 <b>Mac / Linux 用户</b>（点击展开）</summary>
 
-#### Step 1: Open Terminal
+#### 第一步：打开终端
 
-1. Hold **Command** (the ⌘ key) on your keyboard
-2. Press **Space**
-3. A search box appears — type "Terminal"
-4. Hit Enter
+1. 先按住键盘上的 **Command**（就是 ⌘ 那个键）不松手
+2. 再按一下**空格键**
+3. 弹出一个搜索框，输入「终端」两个字
+4. 按回车
 
-You'll see a dark window with a blinking cursor. That's it — you're in. `(=^・ω・^=)`
+看到一个黑乎乎的窗口，光标在闪——这就对了 `(=^・ω・^=)`
 
-#### Step 2: One-Line Install (auto-detects platforms)
+#### 第二步：一键安装（自动检测平台）
 
-Copy the line below 👇, paste it into Terminal, and press Enter:
+复制下面 👇 这行，粘贴到终端里，按回车：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash
 ```
 
-The script auto-detects which dev tools you have installed and sets everything up.
+脚本会自动检测你电脑上装了什么开发工具，帮你装到对应的位置。
 
-#### Install for a Specific Platform
+#### 只装某个平台
 
-Claude Code only:
+只装 Claude Code：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform claude
 ```
 
-Cursor only:
+只装 Cursor：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform cursor
 ```
 
-All platforms:
+全部平台都装：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --platform all
 ```
 
-Platform options: `claude`, `codex`, `cursor`, `kiro`, `vscode`, `codebuddy`, `openclaw`, `antigravity`, `opencode`, `all`
+支持的平台参数：`claude`、`codex`、`cursor`、`kiro`、`vscode`、`codebuddy`、`openclaw`、`antigravity`、`opencode`、`all`
 
-#### Uninstall
+#### 卸载
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --uninstall
 ```
 
-Removes xiaobai from all platforms in one command.
+一键删除所有平台上安装的 xiaobai。
 
 </details>
 
 ---
 
 <details>
-<summary>🪟 <b>Windows</b> (click to expand)</summary>
+<summary>🪟 <b>Windows 用户</b>（点击展开）</summary>
 
-#### Step 1: Open PowerShell
+#### 第一步：打开 PowerShell
 
-1. Click the **Start button** (or press the **Win** key ⊞)
-2. Type `PowerShell`
-3. Click **Windows PowerShell** to open it
+1. 点击屏幕左下角的 **开始按钮**（或者按一下键盘上的 **Win 键** ⊞）
+2. 直接输入 `PowerShell`
+3. 看到 **Windows PowerShell**，点它打开
 
-You'll see a blue window with a blinking cursor. That's it — you're in. `(=^・ω・^=)`
+看到一个蓝色窗口，光标在闪——这就对了 `(=^・ω・^=)`
 
-> **⚠️ Important:** Do NOT use `cmd` (Command Prompt) — it doesn't support the install command below. Use **PowerShell**.
+> [!WARNING]
+> 不要用 `cmd`（命令提示符），它不支持下面的安装命令。一定要用 **PowerShell**。
 
-#### Step 2: One-Line Install (auto-detects platforms)
+#### 第二步：一键安装（自动检测平台）
 
-Copy the line below 👇, paste it into PowerShell, and press Enter:
+复制下面 👇 这行，粘贴到 PowerShell 里，按回车：
 
 ```powershell
 irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
 ```
 
-The script auto-detects which dev tools you have installed and sets everything up.
+脚本会自动检测你电脑上装了什么开发工具，帮你装到对应的位置。
 
-> **💡 Tip:** If you get a "running scripts is disabled" error, run this first to allow it, then try again:
+> [!TIP]
+> 如果提示「无法运行脚本」，先运行这行放开权限，再重新安装：
 >
 > ```powershell
 > Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 > ```
 
-#### Install for a Specific Platform
+#### 只装某个平台
 
-Claude Code only:
+只装 Claude Code：
 
 ```powershell
 $env:XIAOBAI_PLATFORM="claude"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
 ```
 
-Cursor only:
+只装 Cursor：
 
 ```powershell
 $env:XIAOBAI_PLATFORM="cursor"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
 ```
 
-All platforms:
+全部平台都装：
 
 ```powershell
 $env:XIAOBAI_PLATFORM="all"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
 ```
 
-Platform options: `claude`, `codex`, `cursor`, `kiro`, `vscode`, `codebuddy`, `openclaw`, `antigravity`, `opencode`, `all`
+支持的平台参数：`claude`、`codex`、`cursor`、`kiro`、`vscode`、`codebuddy`、`openclaw`、`antigravity`、`opencode`、`all`
 
-#### Uninstall
+#### 卸载
 
 ```powershell
 $env:XIAOBAI_UNINSTALL="1"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
 ```
 
-Removes xiaobai from all platforms in one command.
+一键删除所有平台上安装的 xiaobai。
 
 </details>
 
 ---
 
 <details>
-<summary>🔧 <b>Manual Install</b> (if you prefer not to use scripts)</summary>
+<summary>🔧 <b>手动安装</b>（不想用脚本的话）</summary>
 
-1. Download the [ZIP archive](https://github.com/noya21th/xiaobai/archive/refs/heads/main.zip)
-2. Extract and copy the relevant file to the right location:
+1. 下载 [ZIP 压缩包](https://github.com/noya21th/xiaobai/archive/refs/heads/main.zip)
+2. 解压后，把对应平台的文件复制到相应目录：
 
-| Platform | Copy this file | To here (Mac/Linux) | To here (Windows) |
-|----------|---------------|---------|---------|
+| 平台 | 复制这个文件 | 放到这里（Mac/Linux） | 放到这里（Windows） |
+|------|------------|---------|---------|
 | Claude Code | `skills/xiaobai/SKILL.md` | `~/.claude/skills/xiaobai/` | `%USERPROFILE%\.claude\skills\xiaobai\` |
 | Cursor | `cursor/rules/xiaobai.mdc` | `.cursor/rules/` | `.cursor\rules\` |
 | VS Code | `vscode/copilot-instructions.md` | `.github/` | `.github\` |
@@ -283,41 +389,55 @@ Removes xiaobai from all platforms in one command.
 
 ---
 
-## Usage
+## 🎮 使用方式
 
-**Manual activation:**
+### 手动触发
 
-```
-/xiaobai
-```
+对话中输入 `/xiaobai` 或 `小白模式`。
 
-**Auto-activation:** Xiaobai detects when you need it. If you say things like "I give up," "what does this even mean," "help," or just paste an error message with no explanation — Xiaobai switches on automatically.
+### 自动激活
 
-No setup. No configuration. It reads the room.
+不需要手动触发。以下场景小白会自己上线：
+
+- 你说了「看不懂」「什么意思」——连续出现 2 次
+- 你发了「完了」「崩了」「救命」「放弃」「好难」
+- 你直接贴了一段报错，啥描述都没加
+- 你说「能不能说人话」
+- 你的提问方式明显不是技术背景
+
+> [!TIP]
+> 激活后你会看到：
+>
+> 小白模式已上线。从现在开始我会用大白话跟你沟通，有什么不懂的随时问，没有蠢问题。 `(=^・ω・^=)`
 
 ---
 
-## Sample Quotes
+## 💬 金句预览
 
-> "Bugs are just code trying to talk to you. It's just not great at expressing itself. Let me translate."
+> 报错是代码在跟你说话，只是说话方式比较抽象。我来翻译。
 
-> "The code you lost wasn't wasted. You figured out the requirements, mapped the dead ends, learned what doesn't work. All prologue. The real story starts now."
+> 你知道这种 bug 最讨厌的地方是什么吗——它不报错，它就默默给你一个错误的结果，让你以为是自己的问题。人生也是这样。好了不扯远了，你继续。
 
-> "Not going to lie — this problem is beyond what I can fix quickly. Here's what I do know, here's where I'm stuck, and here's a workaround. No shame in that."
+> 之前那些代码虽然没留下来，但你写它们的过程中搞懂了需求、踩清了坑。凡是过往，皆为序章。
 
-> "It's 2 AM. Not telling you to stop, but code written at night has a high chance of being rewritten in the morning. Experience talking."
+> 做产品有个诀窍：想到 10 个功能，砍掉 7 个，剩下 3 个做到能用。你猜的用户需求，有一半是错的。这不是你的问题，扎克伯格猜的也有一半是错的。
 
-> "You started today not knowing what a terminal was. Look at what you built. This is yours. I just helped carry a few things. Every step was you."
+> 不是催你走，但深夜写的代码明天大概率要重写。经验之谈。
 
-> "Slow and steady isn't a cliche. It's a debugging strategy."
+> 慢慢来，比较快。
 
 ---
 
 ## License
 
-[MIT](LICENSE) — Use it, fork it, make it yours.
+[MIT](LICENSE)
 
 ---
 
-<p align="center"><code>(=^・ω・^=)</code></p>
-<p align="center"><em>Don't panic. The code is still there. So are you.</em></p>
+<p align="center">
+  <code>(=^・ω・^=)</code><br>
+  <sub>写代码这件事，没有人一开始就会。<br>
+  你今天用 AI 做出来的东西，放在十年前得一个团队干一个月。<br>
+  别小看自己，也别急着成为专家。<br>
+  慢慢来，比较快。</sub>
+</p>
