@@ -141,19 +141,25 @@ Mascot: a cat. Obviously. `(=^・ω・^=)`
 
 ## Installation
 
-### Open Your Terminal First
+> A "terminal" is a window where you type commands and the computer does what you say. Don't worry, just follow along.
 
-You'll need a "terminal" — a window where you type commands and the computer does what you say. Don't worry, just follow along.
+---
 
-**Mac:** Hold **Command**, then press **Space**. A search box appears — type "Terminal" and hit Enter.
+<details open>
+<summary>🍎 <b>Mac / Linux</b> (click to expand)</summary>
 
-**Windows:** Hold **Win**, then press **R**. A small window appears — type `cmd` and hit Enter.
+#### Step 1: Open Terminal
 
-You'll see a dark (or light) window with a blinking cursor. That's it — you're in.
+1. Hold **Command** (the ⌘ key) on your keyboard
+2. Press **Space**
+3. A search box appears — type "Terminal"
+4. Hit Enter
 
-### One-Line Install (Recommended)
+You'll see a dark window with a blinking cursor. That's it — you're in. `(=^・ω・^=)`
 
-Copy the line below 👇, paste it into that window, and press Enter:
+#### Step 2: One-Line Install (auto-detects platforms)
+
+Copy the line below 👇, paste it into Terminal, and press Enter:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash
@@ -161,9 +167,7 @@ curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/insta
 
 The script auto-detects which dev tools you have installed and sets everything up.
 
-Supports Claude Code, OpenAI Codex CLI, Cursor, Amazon Kiro, Tencent CodeBuddy, OpenClaw, Google Antigravity, OpenCode, and VS Code (GitHub Copilot).
-
-### Install for a Specific Platform
+#### Install for a Specific Platform
 
 Claude Code only:
 
@@ -185,7 +189,7 @@ curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/insta
 
 Platform options: `claude`, `codex`, `cursor`, `kiro`, `vscode`, `codebuddy`, `openclaw`, `antigravity`, `opencode`, `all`
 
-### Uninstall
+#### Uninstall
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --uninstall
@@ -193,19 +197,89 @@ curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/insta
 
 Removes xiaobai from all platforms in one command.
 
-### Manual Install
+</details>
+
+---
+
+<details>
+<summary>🪟 <b>Windows</b> (click to expand)</summary>
+
+#### Step 1: Open PowerShell
+
+1. Click the **Start button** (or press the **Win** key ⊞)
+2. Type `PowerShell`
+3. Click **Windows PowerShell** to open it
+
+You'll see a blue window with a blinking cursor. That's it — you're in. `(=^・ω・^=)`
+
+> **⚠️ Important:** Do NOT use `cmd` (Command Prompt) — it doesn't support the install command below. Use **PowerShell**.
+
+#### Step 2: One-Line Install (auto-detects platforms)
+
+Copy the line below 👇, paste it into PowerShell, and press Enter:
+
+```powershell
+irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+The script auto-detects which dev tools you have installed and sets everything up.
+
+> **💡 Tip:** If you get a "running scripts is disabled" error, run this first to allow it, then try again:
+>
+> ```powershell
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+#### Install for a Specific Platform
+
+Claude Code only:
+
+```powershell
+$env:XIAOBAI_PLATFORM="claude"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+Cursor only:
+
+```powershell
+$env:XIAOBAI_PLATFORM="cursor"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+All platforms:
+
+```powershell
+$env:XIAOBAI_PLATFORM="all"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+Platform options: `claude`, `codex`, `cursor`, `kiro`, `vscode`, `codebuddy`, `openclaw`, `antigravity`, `opencode`, `all`
+
+#### Uninstall
+
+```powershell
+$env:XIAOBAI_UNINSTALL="1"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+Removes xiaobai from all platforms in one command.
+
+</details>
+
+---
+
+<details>
+<summary>🔧 <b>Manual Install</b> (if you prefer not to use scripts)</summary>
 
 1. Download the [ZIP archive](https://github.com/noya21th/xiaobai/archive/refs/heads/main.zip)
 2. Extract and copy the relevant file to the right location:
 
-| Platform | Copy this file | To here |
-|----------|---------------|---------|
-| Claude Code | `skills/xiaobai/SKILL.md` | `~/.claude/skills/xiaobai/` |
-| Cursor | `cursor/rules/xiaobai.mdc` | `.cursor/rules/` |
-| VS Code | `vscode/copilot-instructions.md` | `.github/` |
-| Codex CLI | `codex/xiaobai/SKILL.md` | `.codex/xiaobai/` |
-| Kiro | `kiro/steering/xiaobai.md` | `.kiro/steering/` |
-| CodeBuddy | `codebuddy/xiaobai.md` | `.codebuddy/` |
+| Platform | Copy this file | To here (Mac/Linux) | To here (Windows) |
+|----------|---------------|---------|---------|
+| Claude Code | `skills/xiaobai/SKILL.md` | `~/.claude/skills/xiaobai/` | `%USERPROFILE%\.claude\skills\xiaobai\` |
+| Cursor | `cursor/rules/xiaobai.mdc` | `.cursor/rules/` | `.cursor\rules\` |
+| VS Code | `vscode/copilot-instructions.md` | `.github/` | `.github\` |
+| Codex CLI | `codex/xiaobai/SKILL.md` | `.codex/xiaobai/` | `.codex\xiaobai\` |
+| Kiro | `kiro/steering/xiaobai.md` | `.kiro/steering/` | `.kiro\steering\` |
+| CodeBuddy | `codebuddy/xiaobai.md` | `.codebuddy/` | `.codebuddy\` |
+
+</details>
 
 ---
 

@@ -244,13 +244,15 @@ TypeError: Cannot read properties of undefined (reading 'map')
 
 ## 📦 安装
 
-### 先打开终端
-
 > [!NOTE]
 > 「终端」就是一个黑乎乎的窗口，你在里面输入命令，电脑就会照做。别怕，跟着做就行。
 
-<details>
-<summary>🍎 <b>我用的是 Mac</b>（点击展开）</summary>
+---
+
+<details open>
+<summary>🍎 <b>Mac / Linux 用户</b>（点击展开）</summary>
+
+#### 第一步：打开终端
 
 1. 先按住键盘上的 **Command**（就是 ⌘ 那个键）不松手
 2. 再按一下**空格键**
@@ -259,23 +261,9 @@ TypeError: Cannot read properties of undefined (reading 'map')
 
 看到一个黑乎乎的窗口，光标在闪——这就对了 `(=^・ω・^=)`
 
-</details>
+#### 第二步：一键安装（自动检测平台）
 
-<details>
-<summary>🪟 <b>我用的是 Windows</b>（点击展开）</summary>
-
-1. 先按住键盘左下角的 **Win 键**（就是那个 Windows 小旗子 ⊞）不松手
-2. 再按一下字母 **R**
-3. 弹出一个小窗口，输入 `cmd`
-4. 按回车
-
-看到一个黑色窗口，光标在闪——这就对了 `(=^・ω・^=)`
-
-</details>
-
-### 一键安装（推荐）
-
-复制下面 👇 这行，粘贴到刚才打开的窗口里，按回车：
+复制下面 👇 这行，粘贴到终端里，按回车：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash
@@ -283,7 +271,7 @@ curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/insta
 
 脚本会自动检测你电脑上装了什么开发工具，帮你装到对应的位置。
 
-### 指定平台安装
+#### 只装某个平台
 
 只装 Claude Code：
 
@@ -305,7 +293,7 @@ curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/insta
 
 支持的平台参数：`claude`、`codex`、`cursor`、`kiro`、`vscode`、`codebuddy`、`openclaw`、`antigravity`、`opencode`、`all`
 
-### 卸载
+#### 卸载
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.sh | bash -s -- --uninstall
@@ -313,21 +301,91 @@ curl -fsSL https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/insta
 
 一键删除所有平台上安装的 xiaobai。
 
-### 手动安装
+</details>
 
-如果你不想用一键脚本，也可以手动下载：
+---
+
+<details>
+<summary>🪟 <b>Windows 用户</b>（点击展开）</summary>
+
+#### 第一步：打开 PowerShell
+
+1. 点击屏幕左下角的 **开始按钮**（或者按一下键盘上的 **Win 键** ⊞）
+2. 直接输入 `PowerShell`
+3. 看到 **Windows PowerShell**，点它打开
+
+看到一个蓝色窗口，光标在闪——这就对了 `(=^・ω・^=)`
+
+> [!WARNING]
+> 不要用 `cmd`（命令提示符），它不支持下面的安装命令。一定要用 **PowerShell**。
+
+#### 第二步：一键安装（自动检测平台）
+
+复制下面 👇 这行，粘贴到 PowerShell 里，按回车：
+
+```powershell
+irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+脚本会自动检测你电脑上装了什么开发工具，帮你装到对应的位置。
+
+> [!TIP]
+> 如果提示「无法运行脚本」，先运行这行放开权限，再重新安装：
+>
+> ```powershell
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+#### 只装某个平台
+
+只装 Claude Code：
+
+```powershell
+$env:XIAOBAI_PLATFORM="claude"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+只装 Cursor：
+
+```powershell
+$env:XIAOBAI_PLATFORM="cursor"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+全部平台都装：
+
+```powershell
+$env:XIAOBAI_PLATFORM="all"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+支持的平台参数：`claude`、`codex`、`cursor`、`kiro`、`vscode`、`codebuddy`、`openclaw`、`antigravity`、`opencode`、`all`
+
+#### 卸载
+
+```powershell
+$env:XIAOBAI_UNINSTALL="1"; irm https://raw.githubusercontent.com/noya21th/xiaobai/main/scripts/install.ps1 | iex
+```
+
+一键删除所有平台上安装的 xiaobai。
+
+</details>
+
+---
+
+<details>
+<summary>🔧 <b>手动安装</b>（不想用脚本的话）</summary>
 
 1. 下载 [ZIP 压缩包](https://github.com/noya21th/xiaobai/archive/refs/heads/main.zip)
 2. 解压后，把对应平台的文件复制到相应目录：
 
-| 平台 | 复制这个文件 | 放到这里 |
-|------|------------|---------|
-| Claude Code | `skills/xiaobai/SKILL.md` | `~/.claude/skills/xiaobai/` |
-| Cursor | `cursor/rules/xiaobai.mdc` | `.cursor/rules/` |
-| VS Code | `vscode/copilot-instructions.md` | `.github/` |
-| Codex CLI | `codex/xiaobai/SKILL.md` | `.codex/xiaobai/` |
-| Kiro | `kiro/steering/xiaobai.md` | `.kiro/steering/` |
-| CodeBuddy | `codebuddy/xiaobai.md` | `.codebuddy/` |
+| 平台 | 复制这个文件 | 放到这里（Mac/Linux） | 放到这里（Windows） |
+|------|------------|---------|---------|
+| Claude Code | `skills/xiaobai/SKILL.md` | `~/.claude/skills/xiaobai/` | `%USERPROFILE%\.claude\skills\xiaobai\` |
+| Cursor | `cursor/rules/xiaobai.mdc` | `.cursor/rules/` | `.cursor\rules\` |
+| VS Code | `vscode/copilot-instructions.md` | `.github/` | `.github\` |
+| Codex CLI | `codex/xiaobai/SKILL.md` | `.codex/xiaobai/` | `.codex\xiaobai\` |
+| Kiro | `kiro/steering/xiaobai.md` | `.kiro/steering/` | `.kiro\steering\` |
+| CodeBuddy | `codebuddy/xiaobai.md` | `.codebuddy/` | `.codebuddy\` |
+
+</details>
 
 ---
 
